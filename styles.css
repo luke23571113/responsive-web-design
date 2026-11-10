@@ -1,0 +1,209 @@
+
+body {
+  margin: 0;
+  background: #f0e5cf;
+}
+
+.poster {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: clamp(22px, 4vh, 55px) 12px clamp(25px, 5vh, 65px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1, h2 {
+  font-family: "Anton", Impact, sans-serif;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  color: black;
+  font-size: min(7vw, 9vh);
+}
+
+h2 {
+  font-family: "Lobster Two", cursive;
+  font-style: italic;
+  color: #df3020;
+  font-size: min(15vw, 17vh);
+  animation: fireColor 2s infinite alternate; 
+}
+
+.fire {
+  position: relative;
+  width: min(430px, 80vw, 40vh);
+  aspect-ratio: 43 / 61;
+  margin: 20px 0;
+}
+
+.block {
+  position: absolute;
+  transform-origin: top left;
+}
+
+.down {
+  transform: skewY(18deg);
+}
+
+.up {
+  transform: skewY(-18deg);
+}
+
+.red {
+  background-color: #dc2b1e;
+}
+
+.orange {
+  background-color: #ee5324;
+}
+
+.yellow {
+  background-color: #ffc23e;
+}
+
+.white {
+  background-color: #fff8e9;
+}
+
+.b1 { left: 57.4%; top: 3%; width: 9.3%; height: 6.1%; }
+.b2 { left: 57.4%; top: 10.3%; width: 9.3%; height: 6.1%; }
+.b3 { left: 49.8%; top: 23.8%; width: 17.2%; height: 6.1%; }
+.b4 { left: 29.1%; top: 25.9%; width: 9.8%; height: 7.4%; }
+.b5 { left: 39.5%; top: 28.7%; width: 9.5%; height: 16.2%; }
+.b6 { left: 18.4%; top: 36.7%; width: 9.8%; height: 8.8%; }
+.b7 { left: 49.5%; top: 38.9%; width: 19.5%; height: 10.7%; }
+.b8 { left: 69.8%; top: 31%; width: 9.5%; height: 31.1%; }
+.b9 { left: 90%; top: 44.8%; width: 9.5%; height: 13.3%; }
+.b10 { left: 2.1%; top: 52.8%; width: 9.5%; height: 9%; }
+.b11 { left: 18.8%; top: 53.3%; width: 9.5%; height: 13.4%; }
+.b12 { left: 29.3%; top: 45.6%; width: 19.8%; height: 22.8%; }
+.b13 { left: 49.5%; top: 50.3%; width: 19.5%; height: 23.4%; }
+.b14 { left: 6.7%; top: 64.3%; width: 25.4%; height: 12.3%; }
+.b15 { left: 70%; top: 63.3%; width: 19.1%; height: 14.8%; }
+.b16 { left: 89.8%; top: 68%; width: 9.8%; height: 7.2%; }
+.b17 { left: 49.5%; top: 74.4%; width: 19.5%; height: 6.7%; }
+.b18 { left: 39.8%; top: 72.5%; width: 9.3%; height: 6.6%; }
+.b19 { left: 49.5%; top: 67%; width: 9.3%; height: 7%; }
+.b20 { left: 17.4%; top: 80%; width: 29.5%; height: 3.3%; }
+.b21 { left: 17.4%; top: 84.3%; width: 29.5%; height: 3.3%; }
+.b22 { left: 17.4%; top: 88.5%; width: 29.5%; height: 3.3%; }
+.b23 { left: 47.7%; top: 86.2%; width: 14.7%; height: 3%; }
+.b24 { left: 47.7%; top: 90.2%; width: 14.7%; height: 3%; }
+.b25 { left: 47.7%; top: 94.1%; width: 14.7%; height: 3%; }
+.b26 { left: 63%; top: 82.3%; width: 28.8%; height: 11.2%; }
+
+
+/* animations */
+
+@keyframes fireColor {
+  0% {
+    color: darkred;
+  }
+
+  50% {
+    color: #ee5324;
+  }
+
+  100% {
+    color: yellow;
+  }
+}
+
+.flickersoft{
+    animation: flickersoft 2s ease-in-out infinite alternate;
+}
+
+.flickerhard {
+    animation: flickerhard .8s ease-in-out infinite;
+}
+
+/* add animiation delays, so they're not all synced */
+.b2, .b6, .b10 {
+  animation-delay: -0.5s;
+}
+
+.b3, .b9, .b16 {
+  animation-delay: -1s;
+}
+
+.b7, .b12, .b15 {
+  animation-delay: -0.7s;
+}
+
+.b8, .b13, .b26 {
+  animation-delay: -1.3s;
+}
+
+.b4, .b11, .b17 {
+  animation-delay: -0.3s;
+}
+
+.b5, .b14 {
+  animation-delay: -0.9s;
+}
+
+@keyframes flickersoft {
+  0% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+
+  20% {
+    opacity: 0.95;
+    filter: brightness(1.3);
+  }
+
+  40% {
+    opacity: 1;
+    filter: brightness(0.8);
+  }
+
+  60% {
+    opacity: 0.95;
+    filter: brightness(1.2);
+  }
+
+  80% {
+    opacity: 1;
+    filter: brightness(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+@keyframes flickerhard {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+
+  20% {
+    opacity: 0.2;
+    filter: brightness(1.3);
+  }
+
+  30% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+
+  65% {
+    opacity: 0.5;
+    filter: brightness(1.2);
+  }
+
+  75% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
